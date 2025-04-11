@@ -20,7 +20,7 @@ Run a full Kali Linux desktop environment with XFCE in your browser using Docker
 git clone https://github.com/yourusername/kali-linux-docker-gui.git
 cd kali-linux-docker-gui
 ```
-###2. Customize Your VNC Password (Important)
+### 2. Customize Your VNC Password (Important)
 In the Dockerfile, find this section:
 
 ```bash
@@ -30,7 +30,7 @@ RUN mkdir -p /root/.vnc && \
 🔐 Replace ChangeYourPasswordHere with your own secure VNC password.
 ```
 
-###3. Build and Run with Docker Compose
+### 3. Build and Run with Docker Compose
 ```bash
 sudo docker-compose up --build -d
 ```
@@ -39,7 +39,7 @@ This will:
 - Start the Kali GUI container in the background
 - Map it to port 6080 on your host machine
 
-###🌐 Access the Kali Desktop
+### 🌐 Access the Kali Desktop
 Open your browser and go to:
 ```bash
 http://<your-host-ip>:6080/vnc.html
@@ -47,21 +47,21 @@ http://<your-host-ip>:6080/vnc.html
 Replace <your-host-ip> with your Ubuntu/Docker host IP (e.g. 192.168.1.100).
 You’ll be prompted to enter the VNC password you defined earlier.
 
-###🗂 Shared Folder
+### 🗂 Shared Folder
 A shared folder is mounted inside the container at:
 ```bash
 /root/data
 ```
 Anything you place in ./data (in your project directory) will persist and sync across rebuilds.
 
-###🛑 Stop the Container:
+### 🛑 Stop the Container:
 
 ```bash
 sudo docker-compose down
 This stops and removes the container but keeps your image and volumes.
 ```
 
-###🛠 Troubleshooting
+### 🛠 Troubleshooting
 Can’t access from another PC? Make sure Docker is binding to 0.0.0.0 (which it is by default with this setup).
 Firewall issues? Try sudo ufw allow 6080/tcp.
 GUI not showing up? Ensure VNC server and websockify are running — try rebuilding the image.
