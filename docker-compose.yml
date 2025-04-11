@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  kali-gui:
+    image: kali-gui
+    container_name: kali-gui
+    build:
+      context: .
+    ports:
+      - "6080:6080"        # noVNC web access
+    environment:
+      - USER=root
+    restart: unless-stopped
+    volumes:
+      - ./data:/root/data  # Optional shared folder
+    networks:
+      - default
