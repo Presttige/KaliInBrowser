@@ -62,9 +62,9 @@ This stops and removes the container but keeps your image and volumes.
 ```
 
 ### 🛠 Troubleshooting
-Can’t access from another PC? Make sure Docker is binding to 0.0.0.0 (which it is by default with this setup).
-Firewall issues? Try sudo ufw allow 6080/tcp.
-GUI not showing up? Ensure VNC server and websockify are running — try rebuilding the image.
+- Can’t access from another PC? Make sure Docker is binding to 0.0.0.0 (which it is by default with this setup).
+- Firewall issues? Try sudo ufw allow 6080/tcp.
+- GUI not showing up? Ensure VNC server and websockify are running — try rebuilding the image.
 
 📌 Notes
 This setup is intended for development, learning, and testing.
